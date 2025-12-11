@@ -1,0 +1,111 @@
+.container {
+    padding: 5rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+    perspective: 1000px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateX(10deg) rotateY(10deg) translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(146, 95, 240, 0.3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(146, 95, 240, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    transform: translateZ(-1px);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.iconWrapper {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateZ(20px);
+}
+
+.card:hover .iconWrapper {
+    transform: scale(1.2) translateZ(40px);
+    color: #fff;
+    text-shadow: 0 0 20px var(--primary);
+}
+
+.skillName {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.progressBar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 3px;
+    width: 0%;
+    /* Default */
+}
+
+/* Simulate levels */
+.progressFill[data-level="Expert"] {
+    width: 95%;
+}
+
+.progressFill[data-level="Advanced"] {
+    width: 80%;
+}
+
+.progressFill[data-level="Intermediate"] {
+    width: 60%;
+}
+
+.progressFill[data-level="Basic"] {
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 4rem 2rem;
+    }
+}

@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 5rem 5rem;
+    /* Top padding accounts for fixed navbar */
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    background: var(--gradient-main);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.button {
+    background: var(--gradient-main);
+    color: white;
+    border: none;
+    padding: 12px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(146, 95, 240, 0.4);
+}
+
+.outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+}
+
+.outline:hover {
+    background: rgba(146, 95, 240, 0.1);
+}
+
+.imageWrapper {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    border-radius: 50%;
+    margin-left: 2rem;
+    padding: 10px;
+    background: linear-gradient(145deg, var(--secondary), var(--primary));
+    box-shadow: 0 0 30px rgba(146, 95, 240, 0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    /* Smooth follow, snap back is manual */
+}
+
+.profileImage {
+    z-index: 1;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 8rem 3rem 4rem;
+        flex-direction: column-reverse;
+        /* Text on bottom on mobile */
+        text-align: center;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+
+    .imageBackground {
+        width: 300px;
+        height: 300px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}

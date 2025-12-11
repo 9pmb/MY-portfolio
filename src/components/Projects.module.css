@@ -1,0 +1,175 @@
+.container {
+    padding: 2rem;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    perspective: 1000px;
+    width: 100%;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(to right, #fff, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.carousel {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.card {
+    position: absolute;
+    width: 350px;
+    height: 480px;
+    background: rgba(25, 25, 35, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageBox {
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tags span {
+    background: rgba(146, 95, 240, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.link {
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.link:hover {
+    background: var(--secondary);
+}
+
+/* 3D States */
+.active {
+    transform: translateX(0) translateZ(200px);
+    z-index: 10;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.prev {
+    transform: translateX(-350px) translateZ(0) rotateY(15deg);
+    z-index: 5;
+    opacity: 0.6;
+    filter: brightness(0.5);
+}
+
+.next {
+    transform: translateX(350px) translateZ(0) rotateY(-15deg);
+    z-index: 5;
+    opacity: 0.6;
+    filter: brightness(0.5);
+}
+
+.hidden {
+    transform: translateZ(-200px);
+    opacity: 0;
+    z-index: 0;
+}
+
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.controls button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    background: #fff;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 300px;
+        height: 450px;
+    }
+
+    .prev {
+        transform: translateX(-50px) scale(0.8);
+        opacity: 0;
+    }
+
+    .next {
+        transform: translateX(50px) scale(0.8);
+        opacity: 0;
+    }
+}
