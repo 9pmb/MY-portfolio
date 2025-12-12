@@ -158,18 +158,53 @@
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 4rem 1rem;
+        perspective: none;
+        /* Remove 3D perspective */
+    }
+
+    .sectionTitle {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .carousel {
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
+        transform-style: flat;
+        /* Remove 3D transform style */
+    }
+
     .card {
-        width: 300px;
-        height: 450px;
+        position: relative;
+        /* Stack normally */
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 450px;
+        opacity: 1 !important;
+        /* Ensure all are visible */
+        transform: none !important;
+        /* Reset transforms */
+        margin: 0 auto;
+        pointer-events: auto;
+        /* Ensure clickable */
     }
 
-    .prev {
-        transform: translateX(-50px) scale(0.8);
-        opacity: 0;
+    /* Hide 3D controls on mobile as we scroll vertically */
+    .controls {
+        display: none;
     }
 
-    .next {
-        transform: translateX(50px) scale(0.8);
-        opacity: 0;
+    .prev,
+    .next,
+    .hidden,
+    .active {
+        /* Reset specific state styles that hide or position elements */
+        transform: none;
+        filter: none;
+        z-index: 1;
     }
 }

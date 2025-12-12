@@ -83,30 +83,43 @@
 
 @media (max-width: 1024px) {
     .container {
-        padding: 8rem 3rem 4rem;
+        padding: 6rem 2rem 8rem;
+        /* Extra bottom padding for nav bar */
         flex-direction: column-reverse;
         /* Text on bottom on mobile */
         text-align: center;
         justify-content: center;
-        gap: 3rem;
+        gap: 2rem;
+        min-height: auto;
+        /* Allow auto height on mobile if needed */
     }
 
     .content {
         align-items: center;
         display: flex;
         flex-direction: column;
-    }
-
-    .imageWrapper {
         width: 100%;
     }
 
-    .imageBackground {
-        width: 300px;
-        height: 300px;
+    .title {
+        font-size: 2.5rem;
     }
 
-    .title {
-        font-size: 3rem;
+    .description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .imageWrapper {
+        width: 280px;
+        height: 280px;
+        margin-left: 0;
+        /* Remove margin */
+        margin-bottom: 2rem;
+    }
+
+    .imageBackground {
+        width: 250px;
+        height: 250px;
     }
 }

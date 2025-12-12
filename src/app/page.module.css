@@ -18,8 +18,9 @@
 @media (max-width: 768px) {
   .mainContent {
     margin-left: 0;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
+    /* Matched to new sidebar height */
     /* Bottom nav height */
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
   }
 }
