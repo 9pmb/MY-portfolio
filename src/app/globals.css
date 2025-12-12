@@ -43,7 +43,8 @@ body {
 }
 
 /* Mobile Global Adjustments */
-@media (max-width: 768px) {
+/* Mobile Global Adjustments */
+@media (max-width: 1024px) {
   html {
     font-size: 14px;
     /* Scales down all rem units */
@@ -65,7 +66,7 @@ main>section {
   padding: 4rem 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   section,
   footer,

@@ -15,7 +15,7 @@
 }
 
 /* Mobile adjustment */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mainContent {
     margin-left: 0;
     margin-bottom: 70px;
