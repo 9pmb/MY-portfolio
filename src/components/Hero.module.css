@@ -111,8 +111,13 @@
     }
 
     .imageWrapper {
-        width: 280px;
-        height: 280px;
+        width: 70vw;
+        /* Fluid width relative to viewport */
+        max-width: 280px;
+        /* Cap at previous size */
+        height: auto;
+        /* Maintain aspect ratio container */
+        aspect-ratio: 1/1;
         margin-left: 0;
         /* Remove margin */
         margin-bottom: 2rem;

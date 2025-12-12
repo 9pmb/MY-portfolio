@@ -42,6 +42,14 @@ body {
   }
 }
 
+/* Mobile Global Adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+    /* Scales down all rem units */
+  }
+}
+
 section,
 footer,
 main>section {
@@ -55,6 +63,17 @@ main>section {
   position: relative;
   /* Add padding to prevent content from hitting edges */
   padding: 4rem 1rem;
+}
+
+@media (max-width: 768px) {
+
+  section,
+  footer,
+  main>section {
+    padding: 2rem 1rem;
+    /* Reduce padding on mobile */
+    min-height: auto;
+  }
 }
 
 a {
